@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fdf4597d1f63ec4e9102a4cbb6305c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iMaxHealth: 0
 --- !u!114 &114999520209932250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -124,9 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a81bc5db9b97dfd4ab0413626891ad9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rigidbody: {fileID: 0}
-  fStartForceMin: 0
-  fStartForceMax: 0
+  Rigidbody: {fileID: 54618277492768168}
+  fStartForceMin: 50
+  fStartForceMax: 200
 --- !u!135 &135941180245169088
 SphereCollider:
   m_ObjectHideFlags: 1
