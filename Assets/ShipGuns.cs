@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Permissions;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 
@@ -23,15 +24,15 @@ public class ShipGuns : MonoBehaviour
 	{
 		foreach (ParticleSystem gun in guns)
 		{
-
 			if (Input.GetButton(_firingKey))
-			{
-				gun.Play();
+			{ 
+				gun.Emit(Mathf.RoundToInt(gun.emission.rateOverTimeMultiplier * Time.deltaTime));
 			}
 			else
 			{
-				gun.Stop();
+				gun.Emit(0);
 			}
 		}
+		
 	}
 }
