@@ -7,6 +7,7 @@ public class Missile : MonoBehaviour
 
 	[SerializeField] private GameObject _Explosion;
 	[SerializeField] private GameObject _ExplosionVertical;
+	
 	// Use this for initialization
 	void Start ()
 	{
@@ -24,6 +25,9 @@ public class Missile : MonoBehaviour
 	{
 		if(other.gameObject.CompareTag("Asteroid"))
 		{
+			Vector3 impactDirection = other.transform.position - transform.position;
+			GameObject impactVFX = Instantiate(_Explosion, transform.position, Quaternion.FromToRotation(Vector3.up, impactDirection));
+			Destroy(impactVFX, 2f);
 			Destroy(gameObject);
 		}
 	}
