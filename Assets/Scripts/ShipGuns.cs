@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Security.Permissions;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 using UnityEngine.Serialization;
@@ -11,6 +12,7 @@ public class ShipGuns : MonoBehaviour
 	[SerializeField] private float _coolDown = 0.5f;
 	private float _coolDownTimer = 0f;
 	[SerializeField] private GameObject _missile;
+	[SerializeField] private GameObject _muzzleFlash;
 	[SerializeField] private float _missileSpeed = 200f;
 	[SerializeField] private float _missileLifeTime = 3f;
 	private GameObject[] _gunBarrels;
@@ -46,8 +48,11 @@ public class ShipGuns : MonoBehaviour
 				GameObject newMissile = Instantiate(_missile, barrel.transform.position, Quaternion.identity);
 				newMissile.GetComponent<Rigidbody>().velocity = transform.forward * _missileSpeed;
 				newMissile.transform.parent = _missileParent.transform;
-				
 				Destroy(newMissile, _missileLifeTime);
+
+				GameObject newFlash = Instantiate(_muzzleFlash, barrel.transform.position, Quaternion.identity);
+				newFlash.transform.parent = barrel.transform;
+				Destroy(newFlash, 1f);
 			}
 			_coolDownTimer = _coolDown;
 		}
