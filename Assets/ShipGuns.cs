@@ -3,16 +3,21 @@ using System.Collections.Generic;
 using System.Security.Permissions;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
+using UnityEngine.Serialization;
 
 public class ShipGuns : MonoBehaviour
 {
 	private string _firingKey = "Fire1";
-	private ParticleSystem[] guns;
+	[SerializeField] private float _coolDown = 0.5f;
+	private float _coolDownTimer = 0f;
+	[SerializeField] private GameObject _missile;
+	[SerializeField] private float _missileSpeed = 200f;
+	private GameObject[] _gunBarrels;
 	
 	// Use this for initialization
 	void Start ()
 	{
-		guns = GetComponentsInChildren<ParticleSystem>();
+		_gunBarrels = GameObject.FindGameObjectsWithTag("Barrel");
 	}
 	
 	// Update is called once per frame
@@ -22,17 +27,18 @@ public class ShipGuns : MonoBehaviour
 
 	void Shoot()
 	{
-		foreach (ParticleSystem gun in guns)
+		_coolDownTimer -= Time.deltaTime;
+		if (Input.GetButton(_firingKey) && _coolDownTimer <= Mathf.Epsilon)
 		{
-			if (Input.GetButton(_firingKey))
-			{ 
-				gun.Emit(Mathf.RoundToInt(gun.emission.rateOverTimeMultiplier * Time.deltaTime));
-			}
-			else
+			foreach (GameObject barrel in _gunBarrels)
 			{
-				gun.Emit(0);
+				// TODO: Why is there no velocity?!
+				GameObject newMissile = Instantiate(_missile, barrel.transform.position, Quaternion.identity);
+				newMissile.GetComponent<Rigidbody>().velocity = newMissile.transform.forward * _missileSpeed;
+				Debug.Log(newMissile.GetComponent<Rigidbody>().velocity);
 			}
+
+			_coolDownTimer = _coolDown;
 		}
-		
 	}
 }
