@@ -5,13 +5,12 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-	[SerializeField] private bool _inversedYAxis = false;
+	[SerializeField] private bool _inversedYaw = false;
 	[SerializeField] private float _movementSpeed = 20f;
 	[SerializeField] private float _rotationSpeed = 50f;
-	[SerializeField] private float _mouseOffsetFromCamera = 100f;
 
 	private Rigidbody _playerRb;
-	
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -19,40 +18,23 @@ public class Player : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void Update()
 	{
 		Movement();
 	}
 
 	void Movement()
 	{
-		Vector3 mousePos = MousePosition();
-    	Quaternion rotationNew = Quaternion.FromToRotation(transform.position, mousePos);
-		transform.rotation = Quaternion.RotateTowards(transform.rotation, rotationNew, _rotationSpeed * Time.deltaTime);
-		
+		float pitch = Input.GetAxis("Mouse X") * _rotationSpeed;
+		float yaw = Input.GetAxis("Mouse Y") * _rotationSpeed;
+		if (_inversedYaw)
+		{
+			yaw = -yaw;
+		}
+
+		transform.Rotate(yaw, pitch, 0f, Space.Self);
+		float resetRoll = transform.eulerAngles.z;
+		transform.Rotate(0, 0, -resetRoll, Space.Self);
 		_playerRb.velocity = transform.forward * _movementSpeed * Time.deltaTime;
-	}
-
-	Vector3 MousePosition()
-	{
-		if (Camera.main == null)
-		{
-			Debug.LogError("No Camera, Cannot Compile ViewPort Direction");
-			return Vector3.zero;
-		}
-		
-		/* Vector3.forward * _mouseOffsetFromCamera
-		 is used to offset the mouse's perceived world position in respect to the camera.
-		 This way the angle we calculate later on is not too obtuse and allows for smoother rotation.
-		*/ 
-		Vector3 mousePositionScreen = Input.mousePosition + Vector3.forward * _mouseOffsetFromCamera;
-		Vector3 mousePositionWorld = Camera.main.ScreenToWorldPoint(mousePositionScreen);
-
-		if (_inversedYAxis == true)
-		{
-			mousePositionWorld.y = -mousePositionWorld.y;
-		}
-		
-		return mousePositionWorld;
 	}
 }
