@@ -1,0 +1,221 @@
+fileFormatVersion: 2
+guid: fb0bc1a742a89974189020bf4ee88549
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: lp_01
+    100004: lp_01_cell_011
+    100006: lp_01_cell_000
+    100008: lp_01_cell_001
+    100010: lp_01_cell_002
+    100012: lp_01_cell_003
+    100014: lp_01_cell_004
+    100016: lp_01_cell_005
+    100018: lp_01_cell_006
+    100020: lp_01_cell_007
+    100022: lp_01_cell_008
+    100024: lp_01_cell_009
+    100026: lp_01_cell_010
+    100028: lp_01_cell_012
+    100030: lp_01_cell_013
+    100032: lp_01_cell_014
+    100034: lp_01_cell_015
+    100036: lp_01_cell
+    100038: lp_01_cell_016
+    100040: lp_01_cell_017
+    100042: lp_01_cell_018
+    100044: lp_01_cell_019
+    100046: lp_01_cell_020
+    100048: lp_01_cell_021
+    100050: lp_01_cell_022
+    400000: //RootNode
+    400002: lp_01
+    400004: lp_01_cell_011
+    400006: lp_01_cell_000
+    400008: lp_01_cell_001
+    400010: lp_01_cell_002
+    400012: lp_01_cell_003
+    400014: lp_01_cell_004
+    400016: lp_01_cell_005
+    400018: lp_01_cell_006
+    400020: lp_01_cell_007
+    400022: lp_01_cell_008
+    400024: lp_01_cell_009
+    400026: lp_01_cell_010
+    400028: lp_01_cell_012
+    400030: lp_01_cell_013
+    400032: lp_01_cell_014
+    400034: lp_01_cell_015
+    400036: lp_01_cell
+    400038: lp_01_cell_016
+    400040: lp_01_cell_017
+    400042: lp_01_cell_018
+    400044: lp_01_cell_019
+    400046: lp_01_cell_020
+    400048: lp_01_cell_021
+    400050: lp_01_cell_022
+    2100000: Material
+    2100002: outside
+    2100004: inside
+    2300000: lp_01
+    2300002: lp_01_cell_011
+    2300004: lp_01_cell_000
+    2300006: lp_01_cell_001
+    2300008: lp_01_cell_002
+    2300010: lp_01_cell_003
+    2300012: lp_01_cell_004
+    2300014: lp_01_cell_005
+    2300016: lp_01_cell_006
+    2300018: lp_01_cell_007
+    2300020: lp_01_cell_008
+    2300022: lp_01_cell_009
+    2300024: lp_01_cell_010
+    2300026: lp_01_cell_012
+    2300028: lp_01_cell_013
+    2300030: lp_01_cell_014
+    2300032: lp_01_cell_015
+    2300034: lp_01_cell
+    2300036: lp_01_cell_016
+    2300038: lp_01_cell_017
+    2300040: lp_01_cell_018
+    2300042: lp_01_cell_019
+    2300044: lp_01_cell_020
+    2300046: lp_01_cell_021
+    2300048: lp_01_cell_022
+    3300000: lp_01
+    3300002: lp_01_cell_011
+    3300004: lp_01_cell_000
+    3300006: lp_01_cell_001
+    3300008: lp_01_cell_002
+    3300010: lp_01_cell_003
+    3300012: lp_01_cell_004
+    3300014: lp_01_cell_005
+    3300016: lp_01_cell_006
+    3300018: lp_01_cell_007
+    3300020: lp_01_cell_008
+    3300022: lp_01_cell_009
+    3300024: lp_01_cell_010
+    3300026: lp_01_cell_012
+    3300028: lp_01_cell_013
+    3300030: lp_01_cell_014
+    3300032: lp_01_cell_015
+    3300034: lp_01_cell
+    3300036: lp_01_cell_016
+    3300038: lp_01_cell_017
+    3300040: lp_01_cell_018
+    3300042: lp_01_cell_019
+    3300044: lp_01_cell_020
+    3300046: lp_01_cell_021
+    3300048: lp_01_cell_022
+    4300000: lp_01_cell_011
+    4300002: lp_01
+    4300004: lp_01_cell_015
+    4300006: lp_01_cell_014
+    4300008: lp_01_cell_013
+    4300010: lp_01_cell_012
+    4300012: lp_01_cell_010
+    4300014: lp_01_cell_009
+    4300016: lp_01_cell_008
+    4300018: lp_01_cell_007
+    4300020: lp_01_cell_006
+    4300022: lp_01_cell_005
+    4300024: lp_01_cell_004
+    4300026: lp_01_cell_003
+    4300028: lp_01_cell_002
+    4300030: lp_01_cell_001
+    4300032: lp_01_cell_000
+    4300034: lp_01_cell_022
+    4300036: lp_01_cell_021
+    4300038: lp_01_cell_020
+    4300040: lp_01_cell_019
+    4300042: lp_01_cell_018
+    4300044: lp_01_cell_017
+    4300046: lp_01_cell_016
+    4300048: lp_01_cell
+    7400000: Default Take
+    9500000: //RootNode
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
