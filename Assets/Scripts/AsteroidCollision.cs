@@ -5,6 +5,9 @@ using UnityEngine;
 public class AsteroidCollision : MonoBehaviour
 {
     public int iMaxHealth;
+    public int iScoreValue;
+
+    public GameObject goFracturedAsteroid;
 
     private int iCurrentHealth;
 
@@ -29,16 +32,19 @@ public class AsteroidCollision : MonoBehaviour
         }
     }
 
-    private void OnParticleCollision(GameObject other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (iCurrentHealth > 0)
+        if(collision.gameObject.CompareTag("Missile"))
         {
-            iCurrentHealth--;
-        }
-        else
-        {
-            Destroy(gameObject);
-            AsteroidSpawner.iCurrentAsteroidCount--;
+            if (iCurrentHealth > 0)
+            {
+                iCurrentHealth--;
+            }
+            else
+            {
+                Destroy(gameObject);
+                AsteroidSpawner.iCurrentAsteroidCount--;
+            }
         }
     }
 }

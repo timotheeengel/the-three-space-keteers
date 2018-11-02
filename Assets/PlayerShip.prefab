@@ -513,8 +513,8 @@ Camera:
   m_GameObject: {fileID: 1762568050726678}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -1136,7 +1136,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goAsteroid: {fileID: 1483561635312244, guid: 776596b0fd498b241a8a97181757e250, type: 2}
   fSpawnRange: 100
-  fMinmumScale: 0.5
+  fMinmumScale: 3
+  fMaximumScale: 4
   iAsteroidMax: 200
 --- !u!114 &114303308323792704
 MonoBehaviour:
@@ -1165,7 +1166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3b722d921adce64ba3717764530593a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inversedYaw: 1
+  _inversedPitch: 1
   _movementSpeed: 200
   _rotationSpeed: 50
 --- !u!124 &124337988729111456

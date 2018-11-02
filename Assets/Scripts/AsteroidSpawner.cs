@@ -8,6 +8,7 @@ public class AsteroidSpawner : MonoBehaviour
 
     public float fSpawnRange;
     public float fMinmumScale;
+    public float fMaximumScale;
     public int iAsteroidMax; //The amount of asteroid desired at all times
 
     public static int iCurrentAsteroidCount;
@@ -15,10 +16,7 @@ public class AsteroidSpawner : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        for (int i = 0; i < iAsteroidMax; i++)
-        {
-            CreateAsteroid();
-        }
+        StartSetupAsteroids();
     }
 
     // Update is called once per frame
@@ -33,13 +31,26 @@ public class AsteroidSpawner : MonoBehaviour
         }
     }
 
-    void CreateAsteroid()
+    public void StartSetupAsteroids()
     {
-        Vector3 v3SpawnPos = Random.insideUnitSphere * fSpawnRange;
+        for (int i = 0; i < iAsteroidMax; i++)
+        {
+            Vector3 v3SpawnPos = Random.insideUnitSphere * fSpawnRange;
+            v3SpawnPos += transform.position;
+            Quaternion qSpawnRotation = Random.rotation;
+            GameObject spawn = Instantiate(goAsteroid, v3SpawnPos, qSpawnRotation);
+            spawn.transform.localScale = Vector3.one * Random.Range(fMinmumScale, fMaximumScale);
+            iCurrentAsteroidCount++;
+        }
+    }
+
+    public void CreateAsteroid()
+    {
+        Vector3 v3SpawnPos = Random.onUnitSphere * fSpawnRange;
         v3SpawnPos += transform.position;
         Quaternion qSpawnRotation = Random.rotation;
         GameObject spawn = Instantiate(goAsteroid, v3SpawnPos, qSpawnRotation);
-        spawn.transform.localScale = Vector3.one * Random.Range(fMinmumScale, 1);
+        spawn.transform.localScale = Vector3.one * Random.Range(fMinmumScale, fMaximumScale);
         iCurrentAsteroidCount++;
     }
 }
