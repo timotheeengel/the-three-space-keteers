@@ -852,7 +852,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 64
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &65105979760914712
 BoxCollider:
@@ -1167,7 +1167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inversedYaw: 1
   _movementSpeed: 200
-  _rotationSpeed: 5
+  _rotationSpeed: 50
 --- !u!124 &124337988729111456
 Behaviour:
   m_ObjectHideFlags: 1

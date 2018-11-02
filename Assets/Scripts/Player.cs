@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Player : MonoBehaviour
 {
 
-	[SerializeField] private bool _inversedYaw = false;
+	[FormerlySerializedAs("_inversedYaw")] [SerializeField] private bool _inversedPitch = false;
 	[SerializeField] private float _movementSpeed = 20f;
 	[SerializeField] private float _rotationSpeed = 50f;
 
@@ -25,16 +26,18 @@ public class Player : MonoBehaviour
 
 	void Movement()
 	{
-		float pitch = Input.GetAxis("Mouse X") * _rotationSpeed;
-		float yaw = Input.GetAxis("Mouse Y") * _rotationSpeed;
-		if (_inversedYaw)
+		float yaw = Input.GetAxis("Mouse X") * _rotationSpeed * Time.deltaTime;
+		float pitch = Input.GetAxis("Mouse Y") * _rotationSpeed * Time.deltaTime;
+		if (_inversedPitch)
 		{
-			yaw = -yaw;
+			pitch = -pitch;
 		}
 
-		transform.Rotate(yaw, pitch, 0f, Space.Self);
+		transform.Rotate(transform.up, yaw);
+		transform.Rotate(transform.right, pitch);
 		float resetRoll = transform.eulerAngles.z;
-		transform.Rotate(0, 0, -resetRoll, Space.Self);
+		transform.Rotate(0, 0, -resetRoll);
+		
 		_playerRb.velocity = transform.forward * _movementSpeed * Time.deltaTime;
 	}
 }
