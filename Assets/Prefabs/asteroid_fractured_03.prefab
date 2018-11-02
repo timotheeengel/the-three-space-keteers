@@ -209,7 +209,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4809511803977712}
-  - component: {fileID: 95205739418414218}
   m_Layer: 0
   m_Name: asteroid_fractured_03
   m_TagString: Untagged
@@ -1276,21 +1275,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.93925405, y: 1.1875353, z: 0.8008142}
   m_Center: {x: 0.744851, y: -0.29883754, z: -0.09126601}
---- !u!95 &95205739418414218
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1651850289689010}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 3217df1f79b523f45a762d28f6f93e15, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
