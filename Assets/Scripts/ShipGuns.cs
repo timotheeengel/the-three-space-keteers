@@ -31,11 +31,29 @@ public class ShipGuns : MonoBehaviour
 			_missileParent.name = "Missiles";
 		}
 		_gunBarrels = GameObject.FindGameObjectsWithTag("Barrel");
+		// TODO: Make this function work!
+		OrientBarrels();
+	}
+
+	void OrientBarrels()
+	{
+		Transform crossHairPos = GameObject.Find("CrossHair").transform;
+		Vector3 crossHairPosZProjected = crossHairPos.forward + new Vector3(0f, 0f, 200f);
+		
+		foreach (GameObject barrel in _gunBarrels)
+		{
+			Vector3 rotationTowardsCrossHair = Vector3.RotateTowards(barrel.transform.forward, crossHairPosZProjected, 0f, 0f);
+			barrel.transform.rotation = Quaternion.LookRotation(rotationTowardsCrossHair);
+		}
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		Shoot();
+		foreach (var gun in _gunBarrels)
+		{
+			Debug.DrawRay(gun.transform.position, gun.transform.forward * 300f, Color.magenta);
+		}
 	}
 
 	void Shoot()
@@ -46,7 +64,9 @@ public class ShipGuns : MonoBehaviour
 			foreach (GameObject barrel in _gunBarrels)
 			{
 				GameObject newMissile = Instantiate(_missile, barrel.transform.position, Quaternion.identity);
-				newMissile.GetComponent<Rigidbody>().velocity = transform.forward * _missileSpeed;
+				Rigidbody missileRb = newMissile.GetComponent<Rigidbody>();
+				missileRb.velocity = transform.forward * _missileSpeed;
+				missileRb.useGravity = false;
 				newMissile.transform.parent = _missileParent.transform;
 				Destroy(newMissile, _missileLifeTime);
 
