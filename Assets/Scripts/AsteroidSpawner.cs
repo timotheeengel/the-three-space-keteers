@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class AsteroidSpawner : MonoBehaviour
 {
-    public GameObject goAsteroid;
+    [SerializeField]
+    public List<GameObject> a_goAsteroids;
 
     public float fSpawnRange;
     public float fMinmumScale;
@@ -38,7 +39,7 @@ public class AsteroidSpawner : MonoBehaviour
             Vector3 v3SpawnPos = Random.insideUnitSphere * fSpawnRange;
             v3SpawnPos += transform.position;
             Quaternion qSpawnRotation = Random.rotation;
-            GameObject spawn = Instantiate(goAsteroid, v3SpawnPos, qSpawnRotation);
+            GameObject spawn = Instantiate(a_goAsteroids[Random.Range(0, a_goAsteroids.Count)], v3SpawnPos, qSpawnRotation);
             spawn.transform.localScale = Vector3.one * Random.Range(fMinmumScale, fMaximumScale);
             iCurrentAsteroidCount++;
         }
@@ -49,7 +50,7 @@ public class AsteroidSpawner : MonoBehaviour
         Vector3 v3SpawnPos = Random.onUnitSphere * fSpawnRange;
         v3SpawnPos += transform.position;
         Quaternion qSpawnRotation = Random.rotation;
-        GameObject spawn = Instantiate(goAsteroid, v3SpawnPos, qSpawnRotation);
+        GameObject spawn = Instantiate(a_goAsteroids[Random.Range(0, a_goAsteroids.Count)], v3SpawnPos, qSpawnRotation);
         spawn.transform.localScale = Vector3.one * Random.Range(fMinmumScale, fMaximumScale);
         iCurrentAsteroidCount++;
     }

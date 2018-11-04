@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114585417096236164}
   - component: {fileID: 114037250104068652}
   m_Layer: 10
-  m_Name: Asteroid
+  m_Name: Asteroid_03
   m_TagString: Asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 41f7ae460bf0283498831f76cb245e30, type: 2}
+  - {fileID: 2100000, guid: 2c2fb6035a6da6041bdd0aab9f542bf7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,7 +87,7 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1483561635312244}
-  m_Mesh: {fileID: 4300000, guid: 0a2474b2a0cc90c46a7dfc7ad78d8396, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 8d0a3324f928148408c19267fb4d5725, type: 3}
 --- !u!54 &54618277492768168
 Rigidbody:
   m_ObjectHideFlags: 1
