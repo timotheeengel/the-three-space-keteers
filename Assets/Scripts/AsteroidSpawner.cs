@@ -14,9 +14,18 @@ public class AsteroidSpawner : MonoBehaviour
 
     public static int iCurrentAsteroidCount;
 
+    private GameObject goAsteroidParent;
+
     // Use this for initialization
     void Start()
     {
+        if (goAsteroidParent == null)
+        { 
+            goAsteroidParent = new GameObject();
+            goAsteroidParent.transform.position = Vector3.zero;
+            goAsteroidParent.transform.rotation = Quaternion.identity;
+            goAsteroidParent.name = "Asteroids";
+        }
         StartSetupAsteroids();
     }
 
@@ -39,8 +48,9 @@ public class AsteroidSpawner : MonoBehaviour
             Vector3 v3SpawnPos = Random.insideUnitSphere * fSpawnRange;
             v3SpawnPos += transform.position;
             Quaternion qSpawnRotation = Random.rotation;
-            GameObject spawn = Instantiate(a_goAsteroids[Random.Range(0, a_goAsteroids.Count)], v3SpawnPos, qSpawnRotation);
-            spawn.transform.localScale = Vector3.one * Random.Range(fMinmumScale, fMaximumScale);
+            GameObject newAsteroid = Instantiate(a_goAsteroids[Random.Range(0, a_goAsteroids.Count)], v3SpawnPos, qSpawnRotation);
+            newAsteroid.transform.localScale = Vector3.one * Random.Range(fMinmumScale, fMaximumScale);
+            newAsteroid.transform.SetParent(goAsteroidParent.transform);
             iCurrentAsteroidCount++;
         }
     }
@@ -50,8 +60,9 @@ public class AsteroidSpawner : MonoBehaviour
         Vector3 v3SpawnPos = Random.onUnitSphere * fSpawnRange;
         v3SpawnPos += transform.position;
         Quaternion qSpawnRotation = Random.rotation;
-        GameObject spawn = Instantiate(a_goAsteroids[Random.Range(0, a_goAsteroids.Count)], v3SpawnPos, qSpawnRotation);
-        spawn.transform.localScale = Vector3.one * Random.Range(fMinmumScale, fMaximumScale);
+        GameObject newAsteroid = Instantiate(a_goAsteroids[Random.Range(0, a_goAsteroids.Count)], v3SpawnPos, qSpawnRotation);
+        newAsteroid.transform.localScale = Vector3.one * Random.Range(fMinmumScale, fMaximumScale);
+        newAsteroid.transform.SetParent(goAsteroidParent.transform);
         iCurrentAsteroidCount++;
     }
 }
