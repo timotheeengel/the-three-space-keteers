@@ -260,6 +260,30 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 85d9912b7f7b32c4c8662c0af2788d03, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 85d9912b7f7b32c4c8662c0af2788d03, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 85d9912b7f7b32c4c8662c0af2788d03, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 85d9912b7f7b32c4c8662c0af2788d03, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 85d9912b7f7b32c4c8662c0af2788d03, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 85d9912b7f7b32c4c8662c0af2788d03, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85d9912b7f7b32c4c8662c0af2788d03, type: 3}
   m_IsPrefabAsset: 0
@@ -532,6 +556,34 @@ Prefab:
     - target: {fileID: 100000, guid: c78d9953a437b6a418811358e24b2643, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c78d9953a437b6a418811358e24b2643, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: c78d9953a437b6a418811358e24b2643, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: c78d9953a437b6a418811358e24b2643, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: c78d9953a437b6a418811358e24b2643, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: c78d9953a437b6a418811358e24b2643, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: c78d9953a437b6a418811358e24b2643, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: c78d9953a437b6a418811358e24b2643, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c78d9953a437b6a418811358e24b2643, type: 3}
@@ -860,7 +912,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1194447461}
   - component: {fileID: 1194447462}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Asteroid Boundary
   m_TagString: AsteroidBoundary
   m_Icon: {fileID: 0}
@@ -941,6 +993,34 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 62d7b59bae12612408680154fcd519e7, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 62d7b59bae12612408680154fcd519e7, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 62d7b59bae12612408680154fcd519e7, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 62d7b59bae12612408680154fcd519e7, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 62d7b59bae12612408680154fcd519e7, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 62d7b59bae12612408680154fcd519e7, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: 62d7b59bae12612408680154fcd519e7, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62d7b59bae12612408680154fcd519e7, type: 3}
   m_IsPrefabAsset: 0
@@ -954,7 +1034,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225049938}
   - component: {fileID: 1225049939}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Asteroid Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1532,9 +1612,9 @@ GameObject:
   - component: {fileID: 2141579330}
   - component: {fileID: 2141579332}
   - component: {fileID: 2141579333}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1551,7 +1631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inversedPitch: 1
-  _movementSpeed: 200
+  _movementSpeed: 2000
   _rotationSpeed: 50
 --- !u!4 &2141579331
 Transform:
@@ -1559,7 +1639,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2141579329}
-  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.42833388, y: 1.2353723, z: 9.885107}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1571,7 +1651,7 @@ Transform:
   - {fileID: 1225049938}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2141579332
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1582,7 +1662,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -1612,7 +1692,7 @@ GameObject:
   - component: {fileID: 2142680557}
   - component: {fileID: 2142680556}
   - component: {fileID: 2142680555}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
