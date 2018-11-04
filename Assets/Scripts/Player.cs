@@ -21,10 +21,31 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		Movement();
+		MovementWithQuaternion();
 	}
 
-	void Movement()
+	void MovementWithQuaternion()
+	{
+		// Rotation needs to be done with Quaternions && applied to the rb's rotation rather than using the transform's!
+		
+		float yaw = Input.GetAxis("Mouse X") * _rotationSpeed * Time.deltaTime;
+		float pitch = Input.GetAxis("Mouse Y") * _rotationSpeed * Time.deltaTime;
+		
+		if (_inversedPitch)
+		{
+			pitch = -pitch;
+		}
+		
+		Quaternion yawAsQuaternion = Quaternion.Euler(0f, yaw, 0f);
+		_playerRb.rotation *= yawAsQuaternion;
+
+		Quaternion pitchAsQuaternion = Quaternion.Euler(pitch, 0f, 0f);
+		_playerRb.rotation *= pitchAsQuaternion;
+
+		_playerRb.rotation *= Quaternion.Euler(0f, 0f, -_playerRb.rotation.z);
+	}
+	
+	void MovementWithEuler()
 	{
 		float yaw = Input.GetAxis("Mouse X") * _rotationSpeed * Time.deltaTime;
 		float pitch = Input.GetAxis("Mouse Y") * _rotationSpeed * Time.deltaTime;
