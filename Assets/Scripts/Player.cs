@@ -36,13 +36,15 @@ public class Player : MonoBehaviour
 			pitch = -pitch;
 		}
 		
-		Quaternion yawAsQuaternion = Quaternion.Euler(0f, yaw, 0f);
-		_playerRb.rotation *= yawAsQuaternion;
+//		Quaternion yawAsQuaternion = Quaternion.Euler(0f, yaw, 0f);
+//		_playerRb.rotation *= yawAsQuaternion;
+//
+//		Quaternion pitchAsQuaternion = Quaternion.Euler(pitch, 0f, 0f);
+//		_playerRb.rotation *= pitchAsQuaternion;
 
-		Quaternion pitchAsQuaternion = Quaternion.Euler(pitch, 0f, 0f);
-		_playerRb.rotation *= pitchAsQuaternion;
-
-		_playerRb.rotation *= Quaternion.Euler(0f, 0f, -_playerRb.rotation.z);
+		Quaternion newOrientationDir = Quaternion.Euler(pitch, yaw, 0f);
+		_playerRb.rotation *= newOrientationDir;
+		_playerRb.velocity = transform.forward * _movementSpeed * Time.deltaTime;
 	}
 	
 	void MovementWithEuler()
@@ -56,7 +58,6 @@ public class Player : MonoBehaviour
 		{
 			pitch = -pitch;
 		}
-		
 
 		transform.Rotate(transform.up, yaw);
 		transform.Rotate(transform.right, pitch);

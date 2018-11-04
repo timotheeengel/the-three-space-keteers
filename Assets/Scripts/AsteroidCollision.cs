@@ -17,12 +17,6 @@ public class AsteroidCollision : MonoBehaviour
         iCurrentHealth = iMaxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("AsteroidBoundary"))
@@ -32,9 +26,19 @@ public class AsteroidCollision : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        HandleCollision(other.gameObject);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Missile"))
+        HandleCollision(collision.gameObject);
+    }
+    
+    private void HandleCollision(GameObject collidingGameObject)
+    {
+        if(collidingGameObject.CompareTag("Missile"))
         {
             if (iCurrentHealth > 0)
             {
@@ -46,5 +50,13 @@ public class AsteroidCollision : MonoBehaviour
                 AsteroidSpawner.iCurrentAsteroidCount--;
             }
         }
+
+        if (collidingGameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            AsteroidSpawner.iCurrentAsteroidCount--;
+            Debug.Log("Destroyed on Contact with Player");
+        }
     }
+    
 }
