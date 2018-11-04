@@ -51,7 +51,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d3789776da189a4c9cc18234cc9e611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goAsteroid: {fileID: 1483561635312244, guid: 776596b0fd498b241a8a97181757e250, type: 2}
+  a_goAsteroids:
+  - {fileID: 1483561635312244, guid: 776596b0fd498b241a8a97181757e250, type: 2}
+  - {fileID: 1483561635312244, guid: 4b65493644d5450429b5568ab094764c, type: 2}
+  - {fileID: 1483561635312244, guid: 45d2cdaf2865ecb42a03d52415431b1b, type: 2}
+  - {fileID: 1483561635312244, guid: 44e7e2ffa5f2ca144b4ae82cf4bb2477, type: 2}
   fSpawnRange: 100
   fMinmumScale: 0.5
+  fMaximumScale: 0
   iAsteroidMax: 200

@@ -46,6 +46,8 @@ public class AsteroidCollision : MonoBehaviour
             }
             else
             {
+                GameObject newFracturedAsteroid = Instantiate(goFracturedAsteroid, transform.position, transform.rotation);
+                newFracturedAsteroid.transform.localScale = gameObject.transform.localScale;
                 Destroy(gameObject);
                 AsteroidSpawner.iCurrentAsteroidCount--;
             }

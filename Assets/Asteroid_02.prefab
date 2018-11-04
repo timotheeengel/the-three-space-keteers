@@ -128,7 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iMaxHealth: 1
   iScoreValue: 50
-  goFracturedAsteroid: {fileID: 0}
+  goFracturedAsteroid: {fileID: 1838506805640362, guid: b67afc39074791943a83cc6d304ecea2,
+    type: 2}
 --- !u!114 &114999520209932250
 MonoBehaviour:
   m_ObjectHideFlags: 1
