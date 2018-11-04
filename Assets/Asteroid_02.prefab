@@ -126,8 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fdf4597d1f63ec4e9102a4cbb6305c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iMaxHealth: 1
-  iScoreValue: 50
+  iMaxHealthPerScale: 1
+  iScoreValuePerScale: 50
   goFracturedAsteroid: {fileID: 1838506805640362, guid: b67afc39074791943a83cc6d304ecea2,
     type: 2}
 --- !u!114 &114999520209932250

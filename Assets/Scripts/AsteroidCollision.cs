@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AsteroidCollision : MonoBehaviour
 {
-    public int iMaxHealth;
-    public int iScoreValue;
+    public int iMaxHealthPerScale;
+    public int iScoreValuePerScale;
 
     public GameObject goFracturedAsteroid;
 
@@ -14,7 +14,7 @@ public class AsteroidCollision : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        iCurrentHealth = iMaxHealth;
+        iCurrentHealth = Mathf.RoundToInt(iMaxHealthPerScale * transform.localScale.x);
     }
 
     private void OnTriggerExit(Collider other)
@@ -46,10 +46,7 @@ public class AsteroidCollision : MonoBehaviour
             }
             else
             {
-                GameObject newFracturedAsteroid = Instantiate(goFracturedAsteroid, transform.position, transform.rotation);
-                newFracturedAsteroid.transform.localScale = gameObject.transform.localScale;
-                Destroy(gameObject);
-                AsteroidSpawner.iCurrentAsteroidCount--;
+                MissileExplosion();
             }
         }
 
@@ -60,5 +57,12 @@ public class AsteroidCollision : MonoBehaviour
             Debug.Log("Destroyed on Contact with Player");
         }
     }
-    
+    private void MissileExplosion()
+    {
+        GameObject newFracturedAsteroid = Instantiate(goFracturedAsteroid, transform.position, transform.rotation);
+        newFracturedAsteroid.transform.localScale = gameObject.transform.localScale;
+        ScoreManager.iScore += Mathf.RoundToInt(iScoreValuePerScale * gameObject.transform.localScale.x);
+        Destroy(gameObject);
+        AsteroidSpawner.iCurrentAsteroidCount--;
+    }
 }
