@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0062931073, g: 0.0024302567, b: 0.0070772395, a: 1}
+  m_IndirectSpecularColor: {r: 0.0060186624, g: 0.0023212163, b: 0.0067591188, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -264,11 +264,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 7f1c1f310e2732b49a202b5681e7d2ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -0.26
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 7f1c1f310e2732b49a202b5681e7d2ea, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: -0.68
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 7f1c1f310e2732b49a202b5681e7d2ea, type: 3}
       propertyPath: m_LocalRotation.x
@@ -318,6 +318,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: b3233de911837964d9457c84b7dd11de, type: 2}
+    - target: {fileID: 400004, guid: 7f1c1f310e2732b49a202b5681e7d2ea, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.85
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f1c1f310e2732b49a202b5681e7d2ea, type: 3}
   m_IsPrefabAsset: 0
@@ -456,6 +460,23 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9186b1b3b29f6954fab04b596617597f, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1794047413 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1734914099630372, guid: 9186b1b3b29f6954fab04b596617597f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1265091854}
+--- !u!114 &1794047417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1794047413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 5e01d81f90773454394711566affa7f8, type: 2}
 --- !u!1 &2084470487
 GameObject:
   m_ObjectHideFlags: 0
