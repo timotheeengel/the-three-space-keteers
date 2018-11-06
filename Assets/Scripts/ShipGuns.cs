@@ -15,7 +15,9 @@ public class ShipGuns : MonoBehaviour
 	[SerializeField] private GameObject _muzzleFlash;
 	[SerializeField] private float _missileSpeed = 200f;
 	[SerializeField] private float _missileLifeTime = 3f;
-	private GameObject[] _gunBarrels;
+
+	[SerializeField] private float _autoAimDistance = 20f;
+ 	private GameObject[] _gunBarrels;
 	private GameObject _missileParent;
 	
 	
@@ -32,27 +34,47 @@ public class ShipGuns : MonoBehaviour
 		}
 		_gunBarrels = GameObject.FindGameObjectsWithTag("Barrel");
 		// TODO: Make this function work!
-		OrientBarrels();
+		// OrientBarrels();
 	}
 
 	void OrientBarrels()
 	{
 		Transform crossHairPos = GameObject.Find("CrossHair").transform;
-		Vector3 crossHairPosZProjected = crossHairPos.forward + new Vector3(0f, 0f, 200f);
-		
-		foreach (GameObject barrel in _gunBarrels)
+		RaycastHit hit;
+		Ray ray = new Ray(Camera.main.ScreenToWorldPoint(GameObject.Find("CrossHair").transform.position), crossHairPos.forward);
+		Debug.DrawRay(ray.origin, ray.direction);
+		if (Physics.Raycast(ray, out hit, _autoAimDistance))
 		{
-			Vector3 rotationTowardsCrossHair = Vector3.RotateTowards(barrel.transform.forward, crossHairPosZProjected, 0f, 0f);
-			barrel.transform.rotation = Quaternion.LookRotation(rotationTowardsCrossHair);
+			// TODO: Retrieve hit object position to be able to rotate barrels towards it.
+
+			Physics.Raycast(ray, out hit);
+			Vector3 autoAimTarget = hit.transform.position;
+		
+			foreach (GameObject barrel in _gunBarrels)
+			{
+				// Vector3 rotationTowardsCrossHair = autoAimTarget - barrel.transform.position;
+				barrel.transform.rotation = Quaternion.LookRotation(autoAimTarget);
+			}
 		}
+		else
+		{
+			foreach (GameObject barrel in _gunBarrels)
+			{
+				Vector3 rotationTowardsCrossHair = crossHairPos.transform.forward * 100f;
+				Debug.DrawRay(crossHairPos.position, crossHairPos.transform.forward * 100f, Color.yellow);
+				barrel.transform.rotation = Quaternion.LookRotation(rotationTowardsCrossHair);
+			}			
+		}
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		Shoot();
+		// OrientBarrels();
 		foreach (var gun in _gunBarrels)
 		{
-			Debug.DrawRay(gun.transform.position, gun.transform.forward * 300f, Color.magenta);
+			Debug.DrawRay(gun.transform.position, gun.transform.forward * 100f, Color.magenta);
 		}
 	}
 
@@ -70,7 +92,7 @@ public class ShipGuns : MonoBehaviour
 				newMissile.transform.parent = _missileParent.transform;
 				Destroy(newMissile, _missileLifeTime);
 
-				GameObject newFlash = Instantiate(_muzzleFlash, barrel.transform.position, Quaternion.identity);
+				GameObject newFlash = Instantiate(_muzzleFlash, barrel.transform.position, barrel.transform.rotation);
 				newFlash.transform.parent = barrel.transform;
 				Destroy(newFlash, 1f);
 			}
