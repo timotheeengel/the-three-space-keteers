@@ -41,10 +41,8 @@ public class ShipGuns : MonoBehaviour
 
 	void OrientBarrels()
 	{
-		
-
 		RaycastHit hit;
-		Ray ray = new Ray(GameObject.Find("CrossHair").transform.position, _crossHairPos.forward);
+		Ray ray = new Ray(_crossHairPos.transform.position, _crossHairPos.forward);
 		Debug.DrawRay(ray.origin, ray.direction * _autoAimDistance, Color.blue);
 		
 		if (Physics.Raycast(ray, out hit, _autoAimDistance))
@@ -84,10 +82,11 @@ public class ShipGuns : MonoBehaviour
 		{
 			foreach (GameObject barrel in _gunBarrels)
 			{
-				GameObject newMissile = Instantiate(_missile, barrel.transform.position, Quaternion.identity);
+				GameObject newMissile = Instantiate(_missile, barrel.transform.position, barrel.transform.rotation);
 				Rigidbody missileRb = newMissile.GetComponent<Rigidbody>();
-				missileRb.velocity = transform.forward * _missileSpeed;
+				missileRb.velocity = barrel.transform.forward * _missileSpeed;
 				missileRb.useGravity = false;
+				
 				newMissile.transform.parent = _missileParent.transform;
 				Destroy(newMissile, _missileLifeTime);
 

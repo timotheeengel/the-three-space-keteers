@@ -343,6 +343,24 @@ Prefab:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 1263913972126614, guid: 9186b1b3b29f6954fab04b596617597f, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1966065400556534, guid: 9186b1b3b29f6954fab04b596617597f, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114553926388670430, guid: 9186b1b3b29f6954fab04b596617597f,
+        type: 2}
+      propertyPath: _movementSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114613428998423256, guid: 9186b1b3b29f6954fab04b596617597f,
+        type: 2}
+      propertyPath: autoAimTarget
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9186b1b3b29f6954fab04b596617597f, type: 2}
   m_IsPrefabAsset: 0
