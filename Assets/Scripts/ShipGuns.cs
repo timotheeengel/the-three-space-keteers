@@ -19,7 +19,9 @@ public class ShipGuns : MonoBehaviour
 	[SerializeField] private float _autoAimDistance = 20f;
  	private GameObject[] _gunBarrels;
 	private GameObject _missileParent;
-	
+
+	private Transform _crossHairProjection;
+	private Transform _crossHairPos;
 	
 	// Use this for initialization
 	void Start ()
@@ -33,36 +35,33 @@ public class ShipGuns : MonoBehaviour
 			_missileParent.name = "Missiles";
 		}
 		_gunBarrels = GameObject.FindGameObjectsWithTag("Barrel");
-		// TODO: Make this function work!
-		// OrientBarrels();
+		_crossHairProjection = GameObject.Find("CrossHairProjection").transform;
+		_crossHairPos = GameObject.Find("CrossHair").transform;
 	}
 
 	void OrientBarrels()
 	{
-		Transform crossHairPos = GameObject.Find("CrossHair").transform;
+		
+
 		RaycastHit hit;
-		Ray ray = new Ray(Camera.main.ScreenToWorldPoint(GameObject.Find("CrossHair").transform.position), crossHairPos.forward);
-		Debug.DrawRay(ray.origin, ray.direction);
+		Ray ray = new Ray(GameObject.Find("CrossHair").transform.position, _crossHairPos.forward);
+		Debug.DrawRay(ray.origin, ray.direction * _autoAimDistance, Color.blue);
+		
 		if (Physics.Raycast(ray, out hit, _autoAimDistance))
 		{
-			// TODO: Retrieve hit object position to be able to rotate barrels towards it.
-
-			Physics.Raycast(ray, out hit);
 			Vector3 autoAimTarget = hit.transform.position;
-		
+			Debug.Log(autoAimTarget);		
+			
 			foreach (GameObject barrel in _gunBarrels)
 			{
-				// Vector3 rotationTowardsCrossHair = autoAimTarget - barrel.transform.position;
-				barrel.transform.rotation = Quaternion.LookRotation(autoAimTarget);
+				barrel.transform.LookAt(autoAimTarget);
 			}
 		}
 		else
 		{
 			foreach (GameObject barrel in _gunBarrels)
 			{
-				Vector3 rotationTowardsCrossHair = crossHairPos.transform.forward * 100f;
-				Debug.DrawRay(crossHairPos.position, crossHairPos.transform.forward * 100f, Color.yellow);
-				barrel.transform.rotation = Quaternion.LookRotation(rotationTowardsCrossHair);
+				barrel.transform.LookAt(_crossHairProjection.position);
 			}			
 		}
 		
@@ -71,7 +70,7 @@ public class ShipGuns : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
 		Shoot();
-		// OrientBarrels();
+		OrientBarrels();
 		foreach (var gun in _gunBarrels)
 		{
 			Debug.DrawRay(gun.transform.position, gun.transform.forward * 100f, Color.magenta);
