@@ -16,6 +16,7 @@ public class AsteroidSpawner : MonoBehaviour
 
     private GameObject goAsteroidParent;
 
+
     // Use this for initialization
     void Start()
     {
@@ -64,5 +65,16 @@ public class AsteroidSpawner : MonoBehaviour
         newAsteroid.transform.localScale = Vector3.one * Random.Range(fMinmumScale, fMaximumScale);
         newAsteroid.transform.SetParent(goAsteroidParent.transform);
         iCurrentAsteroidCount++;
+    }
+
+    public void CleanUpAndRestart()
+    {
+        AsteroidMovement[] asteroids = FindObjectsOfType<AsteroidMovement>();
+        for (int i = 0; i < asteroids.Length; i++)
+        {
+            GameObject temp = asteroids[i].gameObject;
+            Destroy(asteroids[i].gameObject);
+        }
+        StartSetupAsteroids();
     }
 }

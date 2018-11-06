@@ -22,4 +22,9 @@ public class ScoreManager : MonoBehaviour
     {
         tScoreText.text = sScoreText + iScore;
 	}
+
+	public void ResetScore()
+	{
+		iScore = 0;
+	}
 }
