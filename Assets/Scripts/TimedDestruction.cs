@@ -8,15 +8,6 @@ public class TimedDestruction : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        Invoke("Destroy", fTimeToDestruction);
+        Destroy(gameObject, fTimeToDestruction);
 	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-	}
-    void Destroy()
-    {
-        Destroy(gameObject);
-    }
 }

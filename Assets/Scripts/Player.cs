@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class Player : MonoBehaviour
 {
 
-	[FormerlySerializedAs("_inversedYaw")] [SerializeField] private bool _inversedPitch = false;
+	[SerializeField] private bool _inversedPitch = false;
 	[SerializeField] private float _movementSpeed = 200f;
 	[SerializeField] private float _rotationSpeed = 50f;
 
@@ -15,6 +16,8 @@ public class Player : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
 		_playerRb = GetComponentInParent<Rigidbody>();
 	}
 	
@@ -44,27 +47,6 @@ public class Player : MonoBehaviour
 
 		Quaternion newOrientationDir = Quaternion.Euler(pitch, yaw, 0f);
 		_playerRb.rotation *= newOrientationDir;
-		_playerRb.velocity = transform.forward * _movementSpeed * Time.deltaTime;
-	}
-	
-	void MovementWithEuler()
-	{
-		float yaw = Input.GetAxis("Mouse X") * _rotationSpeed * Time.deltaTime;
-		float pitch = Input.GetAxis("Mouse Y") * _rotationSpeed * Time.deltaTime;
-		
-//		float yaw = 0f;
-//		float pitch = Time.deltaTime;
-		if (_inversedPitch)
-		{
-			pitch = -pitch;
-		}
-
-		transform.Rotate(transform.up, yaw);
-		transform.Rotate(transform.right, pitch);
-		float resetRoll = transform.eulerAngles.z;
-		transform.Rotate(0, 0, -resetRoll);
-		// transform.Rotate();
-	
 		_playerRb.velocity = transform.forward * _movementSpeed * Time.deltaTime;
 	}
 }

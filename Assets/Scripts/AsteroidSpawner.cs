@@ -7,10 +7,10 @@ public class AsteroidSpawner : MonoBehaviour
     [SerializeField]
     public List<GameObject> a_goAsteroids;
 
-    public float fSpawnRange;
-    public float fMinmumScale;
-    public float fMaximumScale;
-    public int iAsteroidMax; //The amount of asteroid desired at all times
+    [SerializeField] float fSpawnRange;
+    [SerializeField] float fMinmumScale;
+    [SerializeField] float fMaximumScale;
+    [SerializeField] int iAsteroidMax; //The amount of asteroid desired at all times
 
     public static int iCurrentAsteroidCount;
 

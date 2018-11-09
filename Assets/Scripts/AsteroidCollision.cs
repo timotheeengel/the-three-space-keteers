@@ -53,7 +53,6 @@ public class AsteroidCollision : MonoBehaviour
         if (collidingGameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-            AsteroidSpawner.iCurrentAsteroidCount--;
             Debug.Log("Destroyed on Contact with Player");
         }
     }

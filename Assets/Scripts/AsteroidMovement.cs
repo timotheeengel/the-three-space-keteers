@@ -5,21 +5,15 @@ public class AsteroidMovement : MonoBehaviour
     Vector3 v3Target;
     Vector3 v3Direction;
 
-    public Rigidbody Rigidbody;
-    public float fStartForceMin;
-    public float fStartForceMax;
+    [SerializeField] private Rigidbody Rigidbody;
+    [SerializeField] private float fStartForceMin = 50f;
+    [SerializeField] private float fStartForceMax = 200f;
 
     // Use this for initialization
     void Start()
     {
         v3Direction = Random.onUnitSphere;
         Rigidbody.AddForce(v3Direction * Random.Range(fStartForceMin, fStartForceMax));
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
 
