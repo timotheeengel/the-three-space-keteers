@@ -48,7 +48,6 @@ public class ShipGuns : MonoBehaviour
 		if (Physics.Raycast(ray, out hit, _autoAimDistance))
 		{
 			Vector3 autoAimTarget = hit.transform.position;
-			Debug.Log(autoAimTarget);		
 			
 			foreach (GameObject barrel in _gunBarrels)
 			{

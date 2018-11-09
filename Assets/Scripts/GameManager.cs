@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
 
 	void StartGame()
 	{
-		if (Input.GetButtonDown("Submit"))
+		if (Input.GetButtonDown("Fire1"))
 		{
 			_hasGameStarted = true;
 			_callToAction_Start.enabled = false;
